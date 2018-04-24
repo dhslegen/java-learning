@@ -1,4 +1,4 @@
-package java实例与思考.Spring.SpEL与资源调用;
+package java实例与思考.Spring.Spring常用配置.SpEL与资源调用;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
-import org.springframework.core.env.EnvironmentCapable;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Service;
 
 /**
  * <p>【理解】
@@ -19,8 +17,8 @@ import org.springframework.stereotype.Service;
  * 获取到容器，可以自己获取自己
  */
 @Configuration
-@ComponentScan("java实例与思考.Spring.SpEL与资源调用")
-@PropertySource("classpath:java实例与思考/Spring/SpEL与资源调用/test.properties")
+@ComponentScan("java实例与思考.Spring.Spring常用配置.SpEL与资源调用")
+@PropertySource("classpath:java实例与思考/Spring/Spring常用配置/SpEL与资源调用/test.properties")
 public class ElConfig {
     //注入普通字符
     @Value("I Love You!")
@@ -35,7 +33,7 @@ public class ElConfig {
     @Value("#{demoService.another}")
     private String fromAnother;
     //注入文件资源
-    @Value("classpath:java实例与思考/Spring/SpEL与资源调用/test.properties")
+    @Value("classpath:java实例与思考/Spring/Spring常用配置/SpEL与资源调用/test.properties")
     private Resource testFile;
     //注入网址资源
     @Value("http://www.baidu.com")

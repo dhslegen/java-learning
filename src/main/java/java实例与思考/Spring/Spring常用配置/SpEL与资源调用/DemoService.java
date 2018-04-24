@@ -1,4 +1,4 @@
-package java实例与思考.Spring.SpEL与资源调用;
+package java实例与思考.Spring.Spring常用配置.SpEL与资源调用;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

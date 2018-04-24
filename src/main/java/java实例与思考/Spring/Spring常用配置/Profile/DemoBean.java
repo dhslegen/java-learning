@@ -1,4 +1,4 @@
-package java实例与思考.Spring.Profile;
+package java实例与思考.Spring.Spring常用配置.Profile;
 
 public class DemoBean {
     private String content;

@@ -1,4 +1,4 @@
-package java实例与思考.Spring.Profile;
+package java实例与思考.Spring.Spring常用配置.Profile;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package java实例与思考.Spring.Bean的初始化和销毁;
+package java实例与思考.Spring.Spring常用配置.Bean的初始化和销毁;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

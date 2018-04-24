@@ -1,8 +1,6 @@
-package java实例与思考.Spring.Profile;
+package java实例与思考.Spring.Spring常用配置.Profile;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import javax.xml.transform.Source;
 
 public class Main {
     public static void main(String[] args) {
