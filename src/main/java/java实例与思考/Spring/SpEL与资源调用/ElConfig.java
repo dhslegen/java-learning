@@ -46,6 +46,7 @@ public class ElConfig {
     @Autowired
     private Environment environment;
 
+    //@PropertySource指定配置文件地址，但如果想使用 @Value注入配置文件内容，则需要PropertySourcesPlaceholderConfigurer对象
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertConfigure() {
         return new PropertySourcesPlaceholderConfigurer();
