@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("javaStudy.SpringMVC.快速搭建")
+@ComponentScan("javaStudy.SpringMVC")
 public class MyMvcConfig {
     @Bean
     public InternalResourceViewResolver viewResolver() {
