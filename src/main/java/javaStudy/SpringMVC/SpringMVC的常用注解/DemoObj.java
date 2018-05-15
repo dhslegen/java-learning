@@ -4,7 +4,7 @@ public class DemoObj {
     private Long id;
     private String name;
 
-    public DemoObj() {//jackson对对象和json做转换时一定要次空构造。
+    public DemoObj() {//jackson对对象和json做转换时一定要此空构造。
         super();
     }
 
