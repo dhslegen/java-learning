@@ -33,7 +33,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//继承WebMvcConfigur
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        //和@RequestMapping("")直接返回string的@Controller效果一致
+        //和@RequestMapping("")直接返回string的@Controller效果一致，都存在是优先@Controller
         registry.addViewController("/toUpload").setViewName("upload");
     }
 
