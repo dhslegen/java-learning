@@ -29,13 +29,13 @@ public class ExceptionHandlerAdvice {
     // @ModelAttribute绑定键值对到Model里,也可接受页面的参数,如果过程中涉及绑定，Model空间自动自家两个键值对，分别是一对绑定
     // 的类名首字母小写-对象，一对绑定的结果描述。最后这个对象传给形参，完成自动绑定
     @ModelAttribute
-    public Model addAttributes(Model model, Date date, DemoObj obj) {
+    public Model addAttributes(Model model/*, Date date, DemoObj obj*/) {
         model.addAttribute("msg", "额外信息");
-        model.addAttribute("date", date);
+        // model.addAttribute("date", date);
         return model;
     }
 
-    @ModelAttribute
+    /*  @ModelAttribute
     public int myModel(@RequestParam(required = false) Integer number) {
         return number;
     }
@@ -43,7 +43,7 @@ public class ExceptionHandlerAdvice {
     @ModelAttribute(value = "num")
     public int myModel2(@RequestParam(required = false) Integer number2) {
         return number2;
-    }
+    }*/
 
     // @InitBinder处理前台的请求参数(?后面的)，这里的绑定特指页面的参数与对象的绑定，也就是不会影响同名参数的点对点传值，
     // 执行时机是形式请求参数检索实参（页面的参数）之前，包括 @ModelAttribute的方法除了Model类型参数之外还有其他参数以及

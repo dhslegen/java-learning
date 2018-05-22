@@ -14,6 +14,7 @@ import java.io.IOException;
 public class UploadController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
+    //使用MultipartFile接受上传的文件
     public String upload(MultipartFile file) {
         try {
             FileUtils.writeByteArrayToFile(new File("e:/upload/" + file.getOriginalFilename()), file.getBytes());
