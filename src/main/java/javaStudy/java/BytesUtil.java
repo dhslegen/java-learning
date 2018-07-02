@@ -1,4 +1,4 @@
-package javaStudy;
+package javaStudy.java;
 
 public class BytesUtil {
 	public static String bytesToHexString(byte[] data) {

@@ -189,6 +189,14 @@
             <artifactId>bcprov-jdk15</artifactId>
             <version>140</version>
         </dependency>
+        <!--本地-->
+        <dependency>
+            <groupId>com.tencent</groupId>
+            <artifactId>wlxsdk</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/wlx_server_sdk.jar</systemPath>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

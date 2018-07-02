@@ -13,11 +13,11 @@
     function req() {
         $.ajax({
             url: "/convert",
-            date: "1-zhaowenhao",
+            data: "1-zhaowenhao",
             type: "POST",
             contentType: "application/x-wisely",
-            success: function (date) {
-                $("#resp").html(date)
+            success: function (data) {
+                $("#resp").html(data)
             }
         });
     }

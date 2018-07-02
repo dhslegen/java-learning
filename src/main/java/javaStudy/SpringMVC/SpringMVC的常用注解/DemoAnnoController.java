@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 //@ResponseBody放在类上时,Spring会将该类带有@RequestMapping注解的,全部附加@ResponseBody的同名注解
 @RequestMapping("/anno")
 public class DemoAnnoController {
-    @RequestMapping(produces = "text/plain;charset=UTF-8")//produces定制返回的response的媒体类型和字符集
+    @RequestMapping(produces = "text/plain;charset=UTF-8")//produces定制返回的response的媒体类型和字符集,即具体内容写到
+    //response体的规则，不同的produces不一样，可以自定义，和@ResponseBody协作。
     @ResponseBody
     public String index(HttpServletRequest request) {//可接收HttpRequest作为参数，当然也可接受HttpResponse作为参数
         return "url:" + request.getRequestURL() + " can access.";

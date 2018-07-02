@@ -1,4 +1,4 @@
-package javaStudy;
+package javaStudy.java;
 
 import junit.framework.TestCase;
 import org.junit.Assert;

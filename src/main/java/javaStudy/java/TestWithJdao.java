@@ -1,4 +1,4 @@
-package javaStudy;
+package javaStudy.java;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

@@ -1,4 +1,4 @@
-package javaStudy;
+package javaStudy.java;
 
 interface fxj<e, r, v> {
 	

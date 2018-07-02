@@ -1,4 +1,4 @@
-package javaStudy;
+package javaStudy.java;
 
 public class 自定义异常类5_19 {
 	public static void main(String sd[]) {

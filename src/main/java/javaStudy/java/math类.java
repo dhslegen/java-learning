@@ -1,4 +1,4 @@
-package javaStudy;
+package javaStudy.java;
 
 import java.math.BigInteger;
 import java.text.NumberFormat;

@@ -1,4 +1,4 @@
-package javaStudy;
+package javaStudy.java;
 
 import javax.swing.JFrame;
 

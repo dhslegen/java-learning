@@ -15,7 +15,7 @@ public class ThreadLocal测试 {
 	}
 
 	public static void main(String[] args) {
-		ThreadLocal测试 sn = new ThreadLocal测试();
+		javaStudy.java.ThreadLocal测试 sn = new javaStudy.java.ThreadLocal测试();
 		// ③ 3个线程共享sn，各自产生序列号
 		TestClient t1 = new TestClient(sn);
 		TestClient t2 = new TestClient(sn);
@@ -26,9 +26,9 @@ public class ThreadLocal测试 {
 	}
 
 	private static class TestClient extends Thread {
-		private ThreadLocal测试 sn;
+		private javaStudy.java.ThreadLocal测试 sn;
 
-		public TestClient(ThreadLocal测试 sn) {
+		public TestClient(javaStudy.java.ThreadLocal测试 sn) {
 			this.sn = sn;
 		}
 

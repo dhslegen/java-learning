@@ -32,7 +32,7 @@ public class 拖拽打开文件 extends JFrame {
 
 	public static void main(String[] args) throws Exception {
 		UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");// 设置皮肤
-		new 拖拽打开文件().setVisible(true);
+		new javaStudy.java.拖拽打开文件().setVisible(true);
 	}
 
 	public void drag()// 定义的拖拽方法

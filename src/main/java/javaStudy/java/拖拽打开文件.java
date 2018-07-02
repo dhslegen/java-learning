@@ -1,4 +1,4 @@
-package javaStudy;
+package javaStudy.java;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;

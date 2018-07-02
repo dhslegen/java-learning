@@ -1,45 +1,46 @@
 package javaStudy;
 
 interface fxj<e, r, v> {
-	
-	void make(e ee, r rr, v vv);
+
+    void make(e ee, r rr, v vv);
 }
 
 class fxl<e, r, v> implements fxj<e, r, v> {
-	public fxl() {
-		// TODO 自动生成的构造函数存根
-	}
-	public void make(e ee, r rr, v vv) {
-		System.out.println(ee.toString() + rr.toString() + vv.toString());
-	}
+    public fxl() {
+        // TODO 自动生成的构造函数存根
+    }
+
+    public void make(e ee, r rr, v vv) {
+        System.out.println(ee.toString() + rr.toString() + vv.toString());
+    }
 }
 
 class a_1 {
-	@Override
-	public String toString() {
-		System.out.println("woshia");// TODO 自动生成的方法存根
-		return super.toString();
-	}
+    @Override
+    public String toString() {
+        System.out.println("woshia");// TODO 自动生成的方法存根
+        return super.toString();
+    }
 
-	void shuchu() {
-		System.out.println("hahha");
-	}
+    void shuchu() {
+        System.out.println("hahha");
+    }
 }
 
 class b_1 {
-	@Override
-	public String toString() {
-		System.out.println("woshib");// TODO 自动生成的方法存根
-		return super.toString();
-	}
+    @Override
+    public String toString() {
+        System.out.println("woshib");// TODO 自动生成的方法存根
+        return super.toString();
+    }
 }
 
 class c_1 {
-	@Override
-	public String toString() {
-		System.out.println("woshic");// TODO 自动生成的方法存根
-		return super.toString();
-	}
+    @Override
+    public String toString() {
+        System.out.println("woshic");// TODO 自动生成的方法存根
+        return super.toString();
+    }
 }
 
 public class 泛型 {
@@ -60,13 +61,13 @@ public class 泛型 {
 																 * vv); }
 								...........								 */
 
-	public static void main(String args[]) {
-		fxl fxl1 = new fxl();
-		a_1 ee = new a_1();
-		c_1 vv = new c_1();
-		b_1 rr = new b_1();
-		fxl1.make(ee, rr, vv);
-		fxj jj=new fxl();
-		jj.make(ee, rr, vv);
-	}
+    public static void main(String args[]) {
+        fxl fxl1 = new fxl();
+        a_1 ee = new a_1();
+        c_1 vv = new c_1();
+        b_1 rr = new b_1();
+        fxl1.make(ee, rr, vv);
+        fxj jj = new fxl();
+        jj.make(ee, rr, vv);
+    }
 }
