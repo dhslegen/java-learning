@@ -11,24 +11,25 @@
 <script type="text/javascript" src="<c:url value="../assets/js/jquery.js"/>"></script>
 <script type="text/javascript">
     if (!!window.EventSource) {//EventSource对象只有新式浏览器才有(Chrome,Firefox)等,EventSource是SSE的客户端;
-        var source = new EventSource('push')
+        //新建一个EventSource对象,请求的路径指向"push"
+        var source = new EventSource('push');
         s = '';
         source.addEventListener('message', function (e) {//添加SSE客户端监听,在此获得服务器的推送消息.
             s += e.data + "<br/>";
             $("#msgFromPush").html(s);
         });
         source.addEventListener('open', function (e) {
-            console.log("链接打开.");
+            console.log("链接打开!");
         }, false);
         source.addEventListener('error', function (e) {
             if (e.readyState == EventSource.CLOSED) {
-                console.log("连接关闭")
+                console.log("连接关闭!")
             } else {
                 console.log(e.readyState);
             }
         }, false);
     } else {
-        console.log("你的浏览器不支持SSE");
+        console.log("你的浏览器不支持SSE!");
     }
 </script>
 </body>

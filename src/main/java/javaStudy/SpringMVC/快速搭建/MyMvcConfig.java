@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @Configuration
 @EnableWebMvc //开启SpringMVC支持，若无此句，重写WebMvcConfigurerAdapter无效,开启默认配置
+@EnableScheduling //开启计划任务的支持
 @ComponentScan("javaStudy.SpringMVC")
 public class MyMvcConfig extends WebMvcConfigurerAdapter {//继承WebMvcConfigurerAdapter类，对SpringMVC进行配置
 
@@ -42,6 +44,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {//继承WebMvcConfigur
         registry.addViewController("/toUpload").setViewName("upload");
         registry.addViewController("/converter").setViewName("converter");
         registry.addViewController("/sse").setViewName("/sse");
+        registry.addViewController("/async").setViewName("/async");
     }
 
     @Override

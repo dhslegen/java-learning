@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ConverterController {
-    //@RequestBody表明要从request体中，提取数据，并通过HttpMessageConverter转换为目标对象，这里自动调用
-    //HttpMessageConverter的readInternal方法。
-    //@ResponseBody表明要将结果按application/x-wisely的自定义类型，写到response体中，这里自动调用
-    //HttpMessageConverter的writeInternal方法。
+    //@RequestBody表明要从request体中，提取数据，并通过HttpMessageConverter转换为
+    //目标对象，这里自动调用HttpMessageConverter的readInternal方法。
+    //@ResponseBody表明要将结果按application/x-wisely的自定义类型，写到response
+    //体中，这里自动调用HttpMessageConverter的writeInternal方法。
     @RequestMapping(value = "/convert", produces = "application/x-wisely")
     @ResponseBody
     public DemoObj convert(@RequestBody DemoObj demoObj) {
         return demoObj;
     }
-
 }
