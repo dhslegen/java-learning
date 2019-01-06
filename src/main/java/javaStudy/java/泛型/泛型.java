@@ -1,4 +1,4 @@
-package javaStudy.java;
+package javaStudy.java.泛型;
 
 interface fxj<e, r, v> {
 	
