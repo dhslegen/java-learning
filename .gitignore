@@ -1,17 +1,13 @@
 ### IntelliJ template
 out/
 .idea/
-# Created by .ignore support plugin (hsz.mobi)
 ### Java template
 # Compiled class file
 *.class
-
 # Log file
 *.log
-
 # BlueJ files
 *.ctxt
-
 # Package Files #
 *.jar
 *.war
