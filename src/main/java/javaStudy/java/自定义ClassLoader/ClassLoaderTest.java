@@ -9,14 +9,14 @@ public class ClassLoaderTest {
         // TODO Auto-generated method stub
 
         //创建自定义classloader对象。
-        MyClassLoader loader = new MyClassLoader("E:\\TestLib");
+        MyClassLoader loader = new MyClassLoader("D:\\Workspaces\\IDEA");
         try {
             //加载class文件
-            Class c = loader.loadClass("com.dhs.Test");
-
+            Class c = loader.loadClass("javaStudy.java.BytesUtil");
             if (c != null) {
                 try {
                     Object obj = c.newInstance();
+                    System.out.println(obj.getClass().getClassLoader());
                     Method method = c.getDeclaredMethod("say", null);
                     //通过反射调用Test类的say方法
                     method.invoke(obj, null);
@@ -35,5 +35,4 @@ public class ClassLoaderTest {
         }
 
     }
-
 }
