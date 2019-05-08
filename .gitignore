@@ -26,3 +26,5 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+"src/main/java/javaStudy/\350\256\276\350\256\241\346\250\241\345\274\217/\345\210\233\345\273\272\345\236\213\346\250\241\345\274\217/\345\273\272\351\200\240\350\200\205\346\250\241\345\274\217/"
+"src/main/java/javaStudy/java/\347\275\221\347\273\234\347\274\226\347\250\213/"
