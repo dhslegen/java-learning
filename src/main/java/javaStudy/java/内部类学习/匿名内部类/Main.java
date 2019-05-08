@@ -11,7 +11,7 @@ package javaStudy.java.内部类学习.匿名内部类;
  * 变量a进行更改（对于引用类型的变量，是不允许指向新的对象），这样数据不一致性的问题就得以解决了。
  * 到这里，想必大家应该清楚为何 方法中的局部变量和形参都必须用final进行限定了。
  *
- *
+ * <pre>
  * class Main$1 extends Anonymous {
  *     Main$1(Main this$0, int var2) {
  *         this.this$0 = this$0;
@@ -22,6 +22,9 @@ package javaStudy.java.内部类学习.匿名内部类;
  *         System.out.println("我是匿名类" + this.val$age + "->" + 10);
  *     }
  * }
+ * </pre>
+ *
+ * @author ZhaoWH
  */
 public class Main {
 
