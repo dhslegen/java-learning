@@ -7,7 +7,6 @@ public class Main {
         // 编译报错
         // required ArrayList<Integer>, found ArrayList<Number>
         ArrayList<Integer> list1 = new ArrayList<>();
-        ArrayList<Number> list2 = list1;
 
         // 可以正常通过编译,正常使用
         Integer[] arr1 = new Integer[]{1, 2};
@@ -21,7 +20,6 @@ public class Main {
         // ? extends Number 被限制为 是继承 Number的任意类型,
         // 可能是 Integer,也可能是Float,也可能是其他继承自Number的类,
         // 所以无法将一个确定的类型添加进这个列表,除了 null之外
-        list22.add(new Integer(1));
         // 可以添加
         list22.add(null);
         for (Number number : list22) {
