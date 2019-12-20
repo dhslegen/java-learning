@@ -3,7 +3,7 @@ package javaStudy.java.泛型.泛型类中有泛型方法;
 /**
  * 【结论】泛型类的类型参数不会影响类中泛型方法的类型参数，即泛型方法的类型参数只受方法的范围的影响
  *
- * @author zhaowenhao
+ * @author dhslegen
  */
 public class Main {
 

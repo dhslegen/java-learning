@@ -9,7 +9,7 @@ import javax.swing.*;
 import net.miginfocom.swing.*;
 
 /**
- * @author zhaowenhao
+ * @author dhslegen
  */
 public class Confirm extends JFrame {
     public Confirm() {
@@ -18,7 +18,7 @@ public class Confirm extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - zhaowenhao
+        // Generated using JFormDesigner Evaluation license - dhslegen
         dialogPane = new JPanel();
         contentPanel = new JPanel();
         buttonBar = new JPanel();
@@ -83,7 +83,7 @@ public class Confirm extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - zhaowenhao
+    // Generated using JFormDesigner Evaluation license - dhslegen
     private JPanel dialogPane;
     private JPanel contentPanel;
     private JPanel buttonBar;
