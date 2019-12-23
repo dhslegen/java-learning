@@ -7,14 +7,17 @@ import javaStudy.java.四种访问权限的思考.Employee;
  */
 public class EmployeeExtends extends Employee {
 
+    /**
+     * 非同包子类可访问：public，protected，拒绝：default，private
+     */
     private void check() {
-        // 'name' has private access in 'javaStudy.java.四种访问前线的思考.Employee'
-        // String name = this.name;
-
+        String name = this.name;
         Integer age = this.age;
-        String occupation = this.occupation;
 
-        // 'educationBackground' is not public in 'javaStudy.java.四种访问前线的思考.Employee'. Cannot be accessed from outside package
+        // 'occupation' is not public in 'javaStudy.java.四种访问权限的思考.Employee'. Cannot be accessed from outside package
+        // String occupation = this.occupation;
+
+        // 'educationBackground' has private access in 'javaStudy.java.四种访问权限的思考.Employee'
         // String educationBackground = this.educationBackground;
     }
 }

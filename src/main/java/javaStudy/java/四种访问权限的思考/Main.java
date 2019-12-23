@@ -11,8 +11,7 @@ package javaStudy.java.四种访问权限的思考;
  */
 public class Main {
 
-
     public static void main(String[] args) {
-
     }
+
 }

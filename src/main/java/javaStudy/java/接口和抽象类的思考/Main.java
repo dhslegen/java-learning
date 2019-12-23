@@ -19,7 +19,9 @@ package javaStudy.java.接口和抽象类的思考;
 public class Main {
 
     public static void main(String[] args) {
-
+        Interface interfaceImplements = new InterfaceImplements();
+        interfaceImplements.say();
+        interfaceImplements.sing();
     }
 
 }
