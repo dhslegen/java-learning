@@ -1,4 +1,4 @@
-package javaStudy.java.网络编程.Socket.Server;
+package javaStudy.java.网络编程.Socket.server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
