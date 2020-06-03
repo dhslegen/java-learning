@@ -49,6 +49,7 @@ public class Main {
         Student temp = x;
         x = y;
         y = temp;
+        System.out.println("temp:" + temp.getName());
         System.out.println("x:" + x.getName());
         System.out.println("y:" + y.getName());
     }
