@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="javaStudy.tools.mybatis.mapper.HealthCareMedicineDirectoryOfficialMapper">
+    <insert id="save">
+        INSERT INTO `java-learning`.`health_care_medicine_directory_official`
+                (`medicine_code`,
+                 `medicine_category_level1`,
+                 `medicine_category_level2`,
+                 `medicine_category_level3`,
+                 `medicine_category_level4`,
+                 `medicine_name`,
+                 `form`,
+                 `health_care_category`,
+                 `directory_type`,
+                 `comment`)
+        VALUES (#{healthCareMedicineDirectoryOfficial.medicineCode},
+                #{healthCareMedicineDirectoryOfficial.medicineCategoryLevel1},
+                #{healthCareMedicineDirectoryOfficial.medicineCategoryLevel2},
+                #{healthCareMedicineDirectoryOfficial.medicineCategoryLevel3},
+                #{healthCareMedicineDirectoryOfficial.medicineCategoryLevel4},
+                #{healthCareMedicineDirectoryOfficial.medicineName},
+                #{healthCareMedicineDirectoryOfficial.form},
+                #{healthCareMedicineDirectoryOfficial.healthCareCategory},
+                #{healthCareMedicineDirectoryOfficial.directoryType},
+                #{healthCareMedicineDirectoryOfficial.comment});
+    </insert>
+</mapper>
