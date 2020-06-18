@@ -24,4 +24,9 @@
                 #{healthCareMedicineDirectoryOfficial.directoryType},
                 #{healthCareMedicineDirectoryOfficial.comment});
     </insert>
+
+    <select id="getForms" resultType="java.util.Map">
+        select *
+        from health_care_medicine_form
+    </select>
 </mapper>

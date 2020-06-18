@@ -3,6 +3,9 @@ package javaStudy.tools.mybatis.mapper;
 import javaStudy.tools.mybatis.entity.HealthCareMedicineDirectoryOfficial;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * <p>
  * Mapper 接口
@@ -21,4 +24,5 @@ public interface HealthCareMedicineDirectoryOfficialMapper {
      */
     void save(@Param("healthCareMedicineDirectoryOfficial") HealthCareMedicineDirectoryOfficial healthCareMedicineDirectoryOfficial);
 
+    List<Map<String, String>> getForms();
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="javaStudy.tools.mybatis.mapper.HealthCareMedicineDirectoryMapper">
+    <select id="getByMedicineCode" resultType="javaStudy.tools.mybatis.entity.HealthCareMedicineDirectory">
+        select *
+        from health_care_medicine_directory
+        where medicine_code = #{directoryMedicineCode}
+          and directory_type = #{directoryType}
+          and pk_no
+                not in (select pk_no from test_zwh_health_care_medicine_directory_need_delete)
+    </select>
+</mapper>
