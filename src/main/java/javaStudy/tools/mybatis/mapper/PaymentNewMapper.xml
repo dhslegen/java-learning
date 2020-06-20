@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="javaStudy.tools.mybatis.mapper.PaymentNewMapper">
+    <insert id="add">
+        insert into payment_new(pk_no, medicine_directory_pk_no, new_medicine_directory_pk_no)
+        values (#{pkNo}, #{medicineDirectoryPkNo}, #{newMedicineDirectoryPkNo});
+    </insert>
+</mapper>

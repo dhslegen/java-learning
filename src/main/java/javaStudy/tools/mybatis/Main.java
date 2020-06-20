@@ -1,11 +1,11 @@
 package javaStudy.tools.mybatis;
 
 import javaStudy.tools.mybatis.entity.HealthCareMedicineDirectory;
-import javaStudy.tools.mybatis.entity.IncludedMedicine;
-import javaStudy.tools.mybatis.entity.NewMap;
+import javaStudy.tools.mybatis.entity.IncludedPayment;
+import javaStudy.tools.mybatis.entity.PaymentNew;
 import javaStudy.tools.mybatis.mapper.HealthCareMedicineDirectoryMapper;
-import javaStudy.tools.mybatis.mapper.IncludedMedicineMapper;
-import javaStudy.tools.mybatis.mapper.NewMapMapper;
+import javaStudy.tools.mybatis.mapper.IncludedPaymentMapper;
+import javaStudy.tools.mybatis.mapper.PaymentNewMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -43,27 +43,27 @@ public class Main {
         // }
 
         // 列举所有受影响的关联数据
-        IncludedMedicineMapper includedMedicineMapper = sqlSession.getMapper(IncludedMedicineMapper.class);
+        IncludedPaymentMapper includedPaymentMapper = sqlSession.getMapper(IncludedPaymentMapper.class);
         HealthCareMedicineDirectoryMapper healthCareMedicineDirectoryMapper = sqlSession.getMapper(HealthCareMedicineDirectoryMapper.class);
-        NewMapMapper newMapMapper = sqlSession.getMapper(NewMapMapper.class);
-        List<IncludedMedicine> includedMedicines = includedMedicineMapper.list();
-        for (IncludedMedicine includedMedicine : includedMedicines) {
+        PaymentNewMapper paymentNewMapper = sqlSession.getMapper(PaymentNewMapper.class);
+        List<IncludedPayment> includedPayments = includedPaymentMapper.list();
+        for (IncludedPayment includedPayment : includedPayments) {
             // 找到同样的医保编码但是不是本身
-            List<HealthCareMedicineDirectory> healthCareMedicineDirectories = healthCareMedicineDirectoryMapper.getByMedicineCode(includedMedicine.getDirectoryMedicineCode(), includedMedicine.getDirectoryPkNo(), includedMedicine.getDirectoryType());
+            List<HealthCareMedicineDirectory> healthCareMedicineDirectories = healthCareMedicineDirectoryMapper.getByMedicineCodeAndForm(includedPayment.getDirectoryMedicineCode(), includedPayment.getDirectoryType(), includedPayment.getDirectoryForm());
             if (healthCareMedicineDirectories.size() > 0) {
                 for (HealthCareMedicineDirectory healthCareMedicineDirectory : healthCareMedicineDirectories) {
-                    NewMap newMap = new NewMap();
-                    newMap.setMapMedicinePkNo(includedMedicine.getMapMedicinePkNo());
-                    newMap.setMapDirectoryPkNo(includedMedicine.getMapDirectoryPkNo());
-                    newMap.setNewMapDirectoryPkNo(healthCareMedicineDirectory.getPkNo());
-                    newMapMapper.add(newMap);
+                    PaymentNew paymentNew = new PaymentNew();
+                    paymentNew.setPkNo(includedPayment.getPkNo());
+                    paymentNew.setMedicineDirectoryPkNo(includedPayment.getMedicineDirectoryPkNo());
+                    paymentNew.setNewMedicineDirectoryPkNo(healthCareMedicineDirectory.getPkNo());
+                    paymentNewMapper.add(paymentNew);
                 }
             } else {
-                NewMap newMap = new NewMap();
-                newMap.setMapMedicinePkNo(includedMedicine.getMapMedicinePkNo());
-                newMap.setMapDirectoryPkNo(includedMedicine.getMapDirectoryPkNo());
-                newMap.setNewMapDirectoryPkNo(null);
-                newMapMapper.add(newMap);
+                PaymentNew paymentNew = new PaymentNew();
+                paymentNew.setPkNo(includedPayment.getPkNo());
+                paymentNew.setMedicineDirectoryPkNo(includedPayment.getMedicineDirectoryPkNo());
+                paymentNew.setNewMedicineDirectoryPkNo(null);
+                paymentNewMapper.add(paymentNew);
             }
         }
     }

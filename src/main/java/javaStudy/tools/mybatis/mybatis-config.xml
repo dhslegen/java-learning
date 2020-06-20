@@ -43,7 +43,9 @@
     <mappers>
         <mapper resource="javaStudy/tools/mybatis/mapper/HealthCareMedicineDirectoryOfficialMapper.xml"/>
         <mapper resource="javaStudy/tools/mybatis/mapper/IncludedMedicineMapper.xml"/>
+        <mapper resource="javaStudy/tools/mybatis/mapper/IncludedPaymentMapper.xml"/>
         <mapper resource="javaStudy/tools/mybatis/mapper/HealthCareMedicineDirectoryMapper.xml"/>
         <mapper resource="javaStudy/tools/mybatis/mapper/NewMapMapper.xml"/>
+        <mapper resource="javaStudy/tools/mybatis/mapper/PaymentNewMapper.xml"/>
     </mappers>
 </configuration>

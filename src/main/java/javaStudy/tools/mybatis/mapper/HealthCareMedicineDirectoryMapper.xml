@@ -9,4 +9,14 @@
           and pk_no
                 not in (select pk_no from test_zwh_health_care_medicine_directory_need_delete)
     </select>
+
+    <select id="getByMedicineCodeAndForm" resultType="javaStudy.tools.mybatis.entity.HealthCareMedicineDirectory">
+        select *
+        from health_care_medicine_directory
+        where medicine_code = #{directoryMedicineCode}
+          and directory_type = #{directoryType}
+          and form = #{directoryForm}
+          and pk_no
+                not in (select pk_no from test_zwh_health_care_medicine_directory_need_delete)
+    </select>
 </mapper>

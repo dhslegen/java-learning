@@ -25,4 +25,14 @@ public interface HealthCareMedicineDirectoryMapper extends BaseMapper<HealthCare
      * @return list
      */
     List<HealthCareMedicineDirectory> getByMedicineCode(@Param("directoryMedicineCode") String directoryMedicineCode, @Param("directoryPkNo") Integer directoryPkNo, @Param("directoryType") String directoryType);
+
+    /**
+     * list
+     *
+     * @param directoryMedicineCode directoryMedicineCode
+     * @param directoryPkNo         directoryPkNo
+     * @param directoryForm         directoryForm
+     * @return list
+     */
+    List<HealthCareMedicineDirectory> getByMedicineCodeAndForm(@Param("directoryMedicineCode") String directoryMedicineCode, @Param("directoryType") String directoryType, @Param("directoryForm") String directoryForm);
 }
