@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="javaStudy.tools.mybatis.mapper.MedicineCommonNameMapper">
+    <select id="getByMedicineName" resultType="javaStudy.tools.mybatis.entity.MedicineCommonName">
+        select *
+        from medicine_common_name
+        where medicine_name = #{medicineName}
+    </select>
 
+    <insert id="insertAndSetPkNo" useGeneratedKeys="true" keyProperty="pkNo" keyColumn="pk_no">
+        INSERT INTO `medicine_common_name`(`medicine_name`, `field_type_param_code`,
+                                           `is_valid`, `created_user`, `updated_user`, `created_date`,
+                                           `updated_date`)
+        VALUES (#{medicineName}, '', 'Y', '', '', #{createdDate}, #{updatedDate});
+    </insert>
 </mapper>

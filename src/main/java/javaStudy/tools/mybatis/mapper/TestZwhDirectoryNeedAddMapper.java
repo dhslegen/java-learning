@@ -1,11 +1,13 @@
 package javaStudy.tools.mybatis.mapper;
 
-import javaStudy.tools.mybatis.entity.TestZwhDirectoryNeedAdd;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import javaStudy.tools.mybatis.entity.TestZwhDirectoryNeedAdd;
+
+import java.util.List;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author dhslegen
@@ -13,4 +15,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface TestZwhDirectoryNeedAddMapper extends BaseMapper<TestZwhDirectoryNeedAdd> {
 
+    /**
+     * list
+     *
+     * @return list
+     */
+    List<TestZwhDirectoryNeedAdd> list();
 }

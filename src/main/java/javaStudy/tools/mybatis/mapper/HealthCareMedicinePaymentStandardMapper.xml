@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="javaStudy.tools.mybatis.mapper.HealthCareMedicinePaymentStandardMapper">
+    <select id="getByMedicineDirectoryPkNoAndPaymentAreaCode"
+            resultType="javaStudy.tools.mybatis.entity.HealthCareMedicinePaymentStandard">
+        select *
+        from health_care_medicine_payment_standard
+        where medicine_directory_pk_no = #{healthCareMedicineDirectoryPkNo}
+          and payment_area_code = #{paymentAreaCode}
+    </select>
 
+    <update id="updateByPkNo">
+        UPDATE `java-learning`.`health_care_medicine_payment_standard`
+        SET `payment_proportion`   = #{paymentProportion},
+            `health_care_category` = #{healthCareCategory}
+        WHERE `pk_no` = #{pkNo};
+    </update>
+
+    <insert id="add">
+        INSERT INTO `java-learning`.`health_care_medicine_payment_standard`(`medicine_directory_pk_no`,
+                                                                            `payment_area_code`, `payment_proportion`,
+                                                                            `health_care_category`, `is_valid`,
+                                                                            `created_user`, `updated_user`,
+                                                                            `created_date`, `updated_date`)
+        VALUES (#{medicineDirectoryPkNo}, #{paymentAreaCode}, #{paymentProportion}, #{healthCareCategory}, 'Y',
+                #{createdUser}, #{updatedUser}, #{createdDate}, #{updatedDate});
+    </insert>
 </mapper>

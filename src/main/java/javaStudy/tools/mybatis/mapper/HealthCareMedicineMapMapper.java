@@ -1,11 +1,12 @@
 package javaStudy.tools.mybatis.mapper;
 
-import javaStudy.tools.mybatis.entity.HealthCareMedicineMap;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import javaStudy.tools.mybatis.entity.HealthCareMedicineMap;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author dhslegen
@@ -13,4 +14,25 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface HealthCareMedicineMapMapper extends BaseMapper<HealthCareMedicineMap> {
 
+    /**
+     * get
+     *
+     * @param medicinePkNo medicinePkNo
+     * @return return
+     */
+    HealthCareMedicineMap getByMedicinePkNo(@Param("medicinePkNo") Integer medicinePkNo);
+
+    /**
+     * update
+     *
+     * @param healthCareMedicineMap healthCareMedicineMap
+     */
+    void updateByMedicinePkNo(HealthCareMedicineMap healthCareMedicineMap);
+
+    /**
+     * add
+     *
+     * @param healthCareMedicineMap healthCareMedicineMap
+     */
+    void add(HealthCareMedicineMap healthCareMedicineMap);
 }

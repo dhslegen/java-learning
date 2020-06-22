@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="javaStudy.tools.mybatis.mapper.HealthCareMedicineMapMapper">
+    <select id="getByMedicinePkNo" resultType="javaStudy.tools.mybatis.entity.HealthCareMedicineMap">
+        select *
+        from health_care_medicine_map
+        where medicine_pk_no = #{medicinePkNo}
+    </select>
 
+    <update id="updateByMedicinePkNo">
+        UPDATE `health_care_medicine_map`
+        SET `health_care_medicine_pk_no` = #{healthCareMedicinePkNo}
+        WHERE `medicine_pk_no` = #{medicinePkNo}
+    </update>
+
+    <insert id="add">
+        INSERT INTO `health_care_medicine_map`(`medicine_pk_no`, `health_care_medicine_pk_no`,
+                                               `created_user`, `updated_user`, `created_date`,
+                                               `updated_date`)
+        VALUES (#{medicinePkNo}, #{healthCareMedicinePkNo}, #{createdUser}, #{updatedUser}, #{createdDate},
+                #{updatedDate});
+    </insert>
 </mapper>

@@ -19,4 +19,50 @@
           and pk_no
                 not in (select pk_no from test_zwh_health_care_medicine_directory_need_delete)
     </select>
+
+    <select id="getByMedicineNameAndForm"
+            resultType="javaStudy.tools.mybatis.entity.HealthCareMedicineDirectory">
+        select *
+        from health_care_medicine_directory
+        where medicine_name = #{medicineName}
+          and form = #{form}
+          and health_care_area = '370000'
+          and health_care_version = '001'
+    </select>
+
+    <insert id="insertAndSetPkNo" useGeneratedKeys="true" keyProperty="pkNo" keyColumn="pk_no">
+        INSERT INTO `health_care_medicine_directory`(`medicine_pk_no`, `medicine_code`,
+                                                     `health_care_area`, `health_care_version`,
+                                                     `medicine_category_level1`,
+                                                     `medicine_category_level2`,
+                                                     `medicine_category_level3`,
+                                                     `medicine_category_level4`, `medicine_name`,
+                                                     `form`, `specification`, `health_care_category`,
+                                                     `directory_type`, `comment`, `is_valid`,
+                                                     `created_user`, `updated_user`, `created_date`,
+                                                     `updated_date`)
+        VALUES (0, #{medicineCode}, '370000', '001', '', '', '', '', #{medicineName}, #{form}, '',
+                #{healthCareCategory},
+                #{directoryType}, '', #{isValid}, #{createdUser}, #{updatedUser},
+                #{createdDate}, #{updatedDate});
+    </insert>
+
+    <select id="getByMedicineName" resultType="javaStudy.tools.mybatis.entity.HealthCareMedicineDirectory">
+        select *
+        from health_care_medicine_directory
+        where medicine_name = #{medicineName}
+          and health_care_area = '370000'
+          and health_care_version = '001'
+          and form = ''
+    </select>
+
+    <select id="getMaxMedicineCode" resultType="java.lang.String">
+        SELECT
+        MAX(medicine_code)
+        FROM
+        health_care_medicine_directory
+        WHERE
+        <bind name="pattern" value="'^'+prefix+'[0-9]{8}$'"/>
+        medicine_code REGEXP #{pattern}
+    </select>
 </mapper>
