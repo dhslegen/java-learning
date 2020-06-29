@@ -72,9 +72,6 @@ public class Main {
         MedicineMapper medicineMapper = sqlSession.getMapper(MedicineMapper.class);
         MedicineAliasMapper medicineAliasMapper = sqlSession.getMapper(MedicineAliasMapper.class);
 
-        // 计数器
-        int count = 1;
-
         // 获取需要新增的列表
         List<TestZwhDirectoryNeedAdd> testZwhDirectoryNeedAddList = testZwhDirectoryNeedAddMapper.list();
         // 遍历
@@ -114,7 +111,6 @@ public class Main {
 
                         healthCareMedicineDirectoryMapper.insertAndSetPkNo(healthCareMedicineDirectory1);
                         healthCareMedicineDirectoryPkNo = healthCareMedicineDirectory1.getPkNo();
-                        count++;
                     }
                 } else if ("02".equals(directoryType)) {
                     // 中药
@@ -142,7 +138,6 @@ public class Main {
 
                         healthCareMedicineDirectoryMapper.insertAndSetPkNo(healthCareMedicineDirectory1);
                         healthCareMedicineDirectoryPkNo = healthCareMedicineDirectory1.getPkNo();
-                        count++;
                     }
                 } else {
                     System.out.println("error:错的的药品类型");
