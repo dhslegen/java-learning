@@ -29,11 +29,12 @@ package javaStudy.java.内部类学习.匿名内部类;
 public class Main {
 
     public static void main(String[] args) {
-
+        int age = 10;
+        new Main().test(age);
     }
 
-    private void test(final int age) {
-        final int age1 = 10;
+    private void test(int age) {
+        int age1 = 10;
         new Anonymous() {
             public void say() {
                 System.out.println("我是匿名类" + age + "->" + age1);

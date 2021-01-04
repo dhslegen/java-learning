@@ -68,14 +68,14 @@ public class Main {
         }
 
         // ||当前置参数不符合就停止了
-        System.out.println("test2() || test1()");
-        if (test2() || test1()) {
+        System.out.println("test1() || test2()");
+        if (test1() || test2()) {
             System.out.println("test success");
         }
 
         // |无论如何都会计算两边
-        System.out.println("test1() | test2())");
-        if (test2() | test1()) {
+        System.out.println("test1() | test2()");
+        if (test1() | test2()) {
             System.out.println("test success");
         }
     }

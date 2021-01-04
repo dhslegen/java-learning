@@ -22,6 +22,8 @@ public class Main {
         Interface interfaceImplements = new InterfaceImplements();
         interfaceImplements.say();
         interfaceImplements.sing();
+        Abstract anAbstract = new AbstractExtends();
+        anAbstract.rap();
     }
 
 }

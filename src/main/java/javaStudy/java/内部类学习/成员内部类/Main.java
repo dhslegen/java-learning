@@ -7,5 +7,6 @@ public class Main {
         inner.say();
         BaseOuter baseOuter = new BaseOuter();
         InheritInner inheritInner = new InheritInner(baseOuter);
+        inheritInner.say();
     }
 }

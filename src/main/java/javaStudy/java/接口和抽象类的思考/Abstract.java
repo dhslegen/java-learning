@@ -28,7 +28,16 @@ public abstract class Abstract {
     /**
      * rap
      */
-    abstract void rap();
+    public void rap() {
+        rap1();
+    }
+
+    /**
+     * rap
+     */
+    private void rap1() {
+        System.out.println("rap1 in abstract");
+    }
 
     // Illegal combination of modifiers: 'abstract' and 'private'
     // private abstract void dance();
@@ -37,4 +46,7 @@ public abstract class Abstract {
     // default abstract void rap() {
     // }
 
+    // Abstract methods cannot have a body
+    // abstract void rap() {
+    // }
 }

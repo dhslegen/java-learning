@@ -1,38 +1,67 @@
 package javaStudy.java.泛型.PECS;
 
 import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * @author dhslegen
+ */
 public class Main {
     public static void main(String[] args) {
-        // 编译报错
-        // required ArrayList<Integer>, found ArrayList<Number>
-        ArrayList<Integer> list1 = new ArrayList<>();
+        List<Animal> animals = new ArrayList<>();
+        List<Cat> cats = new ArrayList<>();
+        List<Garfield> garfields = new ArrayList<>();
 
-        // 可以正常通过编译,正常使用
-        Integer[] arr1 = new Integer[]{1, 2};
-        Number[] arr2 = arr1;
+        animals.add(new Animal());
+        cats.add(new Cat());
+        garfields.add(new Garfield());
 
-        ArrayList<Integer> list11 = new ArrayList<>();
-        // 协变, 可以正常转化, 表示list2是继承 Number的类型
-        ArrayList<? extends Number> list22 = list11;
+        // Incompatible types. Found: 'java.util.List<javaStudy.java.泛型.PECS.Main.Animal>', required: 'java.util.List<? extends javaStudy.java.泛型.PECS.Main.Cat>'
+        // List<? extends Cat> extendsCatFromAnimals = animals;
+        List<? super Cat> superCatFromAnimals = animals;
+        List<?> fromCats = animals;
 
-        // 无法正常添加
-        // ? extends Number 被限制为 是继承 Number的任意类型,
-        // 可能是 Integer,也可能是Float,也可能是其他继承自Number的类,
-        // 所以无法将一个确定的类型添加进这个列表,除了 null之外
-        // 可以添加
-        list22.add(null);
-        for (Number number : list22) {
+        List<? extends Cat> extendsCatFromCats = cats;
+        List<? super Cat> superCatFromCats = cats;
 
-        }
+        List<? extends Cat> extendsCatFromGarfields = garfields;
+        // Incompatible types. Found: 'java.util.List<javaStudy.java.泛型.PECS.Main.Garfield>', required: 'java.util.List<? super javaStudy.java.泛型.PECS.Main.Cat>'
+        // List<? super Cat> superCatFromGarfields = garfields;
 
-        // 逆变
-        ArrayList<Number> list3 = new ArrayList<>();
-        ArrayList<? super Number> list4 = list3;
-        list4.add(new Integer(1));
-        list4.add(new Long(1));
-        for (Object o : list4) {
+        // 'add(capture<? extends javaStudy.java.泛型.PECS.Main.Cat>)' in 'java.util.List' cannot be applied to '(javaStudy.java.泛型.PECS.Main.Animal)'
+        // extendsCatFromCats.add(new Animal());
+        // extendsCatFromCats.add(new Cat());
+        // extendsCatFromCats.add(new Garfield());
 
-        }
+        // 'add(capture<? super javaStudy.java.泛型.PECS.Main.Cat>)' in 'java.util.List' cannot be applied to '(javaStudy.java.泛型.PECS.Main.Animal)'
+        // superCatFromCats.add(new Animal());
+        superCatFromCats.add(new Cat());
+        superCatFromAnimals.add(new Garfield());
+
+        Object o = extendsCatFromCats.get(0);
+        Cat cat = extendsCatFromCats.get(0);
+        // Incompatible types. Found: 'capture<? extends javaStudy.java.泛型.PECS.Main.Cat>', required: 'javaStudy.java.泛型.PECS.Main.Garfield'
+        // Garfield garfield = extendsCatFromGarfields.get(0);
+
+        Garfield copy = copy(animals, garfields);
+        Animal animal = animals.get(0);
+        Garfield garfield = garfields.get(0);
     }
+
+    public static <T> T copy(List<? super T> dest, List<? extends T> src) {
+        for (int i = 0; i < src.size(); i++) {
+            dest.set(i, src.get(i));
+        }
+        return src.get(0);
+    }
+
+    static class Animal {
+    }
+
+    static class Cat extends Animal {
+    }
+
+    static class Garfield extends Cat {
+    }
+
 }

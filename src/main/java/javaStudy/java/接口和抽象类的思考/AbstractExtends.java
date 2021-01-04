@@ -25,9 +25,8 @@ public class AbstractExtends extends Abstract {
 
     }
 
-    @Override
-    void rap() {
-
+    public void rap1() {
+        System.out.println("rap1");
     }
 
 }
